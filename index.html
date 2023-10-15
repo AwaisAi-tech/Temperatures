@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #353b47;
+            
+        }
+        .converter {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 100px;
+            border: 3px solid #73dfa4;
+            border-radius: 5px;
+            
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-bottom: 3px #353b47;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="converter">
+        <h1>Celsius to Fahrenheit Converter</h1>
+        <label for="celsius">Enter Celsius:</label>
+        <input type="number" id="celsius" placeholder="Celsius">
+        <button onclick="convertTemperature()">Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            // Get the input value (Celsius)
+            var celsius = parseFloat(document.getElementById("celsius").value);
+
+            // Check if the input is a valid number
+            if (!isNaN(celsius)) {
+                // Convert Celsius to Fahrenheit
+                var fahrenheit = (celsius * 9/5) + 32;
+
+                // Display the result
+                document.getElementById("result").innerHTML = celsius + " Celsius is " + fahrenheit.toFixed(2) + " Fahrenheit.";
+            } else {
+                // Handle invalid input
+                document.getElementById("result").innerHTML = "Please enter a valid number for Celsius.";
+            }
+        }
+    </script>
+</body>
+</html>
